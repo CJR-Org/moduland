@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <title>moduland &middot module versions</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>{{name}}</h1>
+            <h2>versions</h2>
+            <div>
+                {{#each versions}}
+                    <div><a href="/pkg/{{../name}}/{{this}}">{{this}}</a></div>
+                {{/each}}
+            </div>
+        </center>
+
+        <footer>
+            <a class="no-decoration" href="/">
+                go home
+            </a>
+            <span> | </span>
+            <a class="no-decoration" href="https://github.com/{{user}}/{{repo}}" target="_blank">
+                view on github
+            </a>
+        </footer>
+    </body>
+</html>

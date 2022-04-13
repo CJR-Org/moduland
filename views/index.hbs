@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <title>moduland</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>welcome to moduland</h1>
+            <a href="/pkg/add"><button>add a module</button></a>
+            <br><br><br>
+            <h2>modules</h2>
+            <div>
+                {{#each modules}}
+                    <div><a href="/pkg/{{this}}">{{this}}</a></div>
+                {{/each}}
+            </div>
+        </center>
+    </body>
+</html>

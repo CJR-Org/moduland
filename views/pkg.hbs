@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <title>moduland &middot view module</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>{{name}}</h1>
+            <a href="/pkg/{{name}}/versions"><h5>{{version}}</h5></a>
+            <code>pcjr install {{name}}{{install_version}}</code><br><br>
+            <h2>files</h2>
+            <div id="files">
+                {{#if files}}
+                {{#each files}}
+                    <div class="file"><a class="no-decoration" href="https://github.com/{{../user}}/{{../repo}}/blob/{{../version}}/{{this}}" target="_blank">{{this}}</a></div>
+                {{/each}}
+                {{else}}
+                    this package can still be installed, however no releases of the github repo are available or have not yet been cached.
+                {{/if}}
+            </div>
+        </center>
+
+        <footer>
+            <a class="no-decoration" href="/">
+                go home
+            </a>
+            <span> | </span>
+            <a class="no-decoration" href="https://github.com/{{user}}/{{repo}}" target="_blank">
+                view on github
+            </a>
+        </footer>
+    </body>
+</html>

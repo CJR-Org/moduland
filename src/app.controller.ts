@@ -1,18 +1,19 @@
 import { Controller, Get, Render } from '@nestjs/common';
+import { DB } from 'database/VersatileDB';
 import { join } from 'path';
-const { DB } = require(join(__dirname, '..', 'database', 'db.js'));
-const database = new DB(join(__dirname, '..', 'database', 'packages.db'));
+
+const database = new DB(join(__dirname, '..', 'database', 'packages.db'), {
+  schema: join(__dirname, '..', 'database', 'schema.json'),
+});
 
 // uncomment for database generation
-// database.format();
-// database.finalize();
+database.format();
 
 @Controller()
 export class AppController {
   @Get()
   @Render('index.hbs')
   root() {
-    database.read();
-    return { modules: Object.keys(database.jsonify()) };
+    return { modules: Object.keys(database.read_and_jsonify()) };
   }
 }

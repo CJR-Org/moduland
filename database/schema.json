@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "package": {
+      "primary": "name",
+
+      "name": {
+        "type": "string"
+      },
+      "user": {
+        "type": "string"
+      },
+      "repo": {
+        "type": "string"
+      },
+      "versions": {
+        "type": "object",
+        "value": []
+      },
+      "files": {
+        "type": "object",
+        "value": {}
+      }
+    }
+  }
+}

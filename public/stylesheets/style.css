@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #171717;
-  color: white;
-}
-
-button {
-  font-family: 'Poppins', sans-serif;
-}
-
 footer {
   position: fixed;
   left: 0px;
@@ -24,16 +14,6 @@ a {
 .no-decoration {
   color: white;
   text-decoration: none;
-}
-
-button,
-input {
-  border-radius: 10px;
-  border: none;
-  background-color: #404242;
-  color: white;
-  padding: 10px;
-  margin: 3px;
 }
 
 .file {

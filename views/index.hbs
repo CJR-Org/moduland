@@ -1,24 +1,43 @@
-<!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="/stylesheets/style.css">
-        <title>moduland</title>
-    </head>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/fluent.css' />
+    <title>moduland</title>
+  </head>
 
-    <body>
-        <center>
-            <h1>welcome to moduland</h1>
-            <a href="/pkg/add"><button>add a module</button></a>
-            <br><br><br>
-            <h2>modules</h2>
-            <div>
-                {{#each modules}}
-                    <div><a href="/pkg/{{this}}">{{this}}</a></div>
-                {{/each}}
-            </div>
-        </center>
-    </body>
+  <body>
+    <center>
+      <h1>welcome to moduland</h1>
+      <button onclick='showDialog()'>add a module</button>
+      <br /><br /><br />
+      <h2>modules</h2>
+      <div>
+        {{#each modules}}
+          <div><a href='/pkg/{{this}}'>{{this}}</a></div>
+        {{/each}}
+      </div>
+    </center>
+
+    <dialog
+      id='add-module-dialog'
+      data-title='Add Module'
+      data-description='First choose a name for your module, then fill in the repository field with the format: user/repo'
+    >
+      <input class='w-full' placeholder='Module Name' id='module-name' />
+      <input placeholder='GitHub Repository' id='repository' />
+      <button class='active' onclick='submit()'>Submit</button>
+      <button onclick='closeDialog()'>Cancel</button>
+    </dialog>
+
+    <script
+      src='https://code.jquery.com/jquery-3.6.0.min.js'
+      integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4='
+      crossorigin='anonymous'
+    ></script>
+    <script src='/scripts/index.js'></script>
+    <script src='/scripts/add_module.js'></script>
+    <script src='/scripts/fluent.js'></script>
+  </body>
 </html>
